@@ -16,7 +16,10 @@ var refitSettings = new RefitSettings()
     AuthorizationHeaderValueGetter = (rt, rq) => Task.FromResult(authToken),
 };
 
-builder.Services.AddRefitClient<ITmdbApi>(refitSettings).ConfigureHttpClient(c => c.BaseAddress = new Uri(""));
+//Notice that we are passing refitsettings parameter to AddRefitClient
+//AddRefitClient is on package Refit.HttpClientFactory
+
+builder.Services.AddRefitClient<ITmdbApi>(refitSettings).ConfigureHttpClient(c => c.BaseAddress = new Uri("https://api.themoviedb.org/3"));
 
 var app = builder.Build();
 
