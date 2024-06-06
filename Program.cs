@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var authToken = string.Empty;
+var authToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYzI5YzNhYmY0MmM0MTAzNjExMDliOGZkNjg2YjhlYiIsInN1YiI6IjY2NjEwMDI2OGZkYzZkMzc0YmI3NWEwYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.flsU59Y_xIO-Zg3h766s0JrHQfiuFU7KcnmAuA3lc5M";
 var refitSettings = new RefitSettings()
 {
     AuthorizationHeaderValueGetter = (rt, rq) => Task.FromResult(authToken),
